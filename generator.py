@@ -3,11 +3,10 @@ import pandas as pd
 import random
 
 def GenerateRandomBookList(df):
-    data = pd.read_csv("book_data.csv")
     codes = np.arange(0, 10, 1)
     books = []
     for code in codes:
-        books.append(list(data.loc[data["Category"]==code]["Book Title"]))
+        books.append(list(df.loc[df["Category"]==code]["Book Title"]))
     book_dict = {}
     for code in codes:
         book_dict[str(code)] = books[code]
