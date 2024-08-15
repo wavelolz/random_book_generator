@@ -10,7 +10,6 @@ st.title("隨機書本產生器")
 uploaded_file = st.file_uploader("選擇檔案")
 
 if uploaded_file is not None:
-    print(uploaded_file)
     
     if uploaded_file.name.endswith('.xlsx'):
         df = pd.read_excel(uploaded_file)
